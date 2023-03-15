@@ -38,10 +38,25 @@ while True:
             else:
                 os.system('cls')
                 print('Cpf inválido ou inexistente')
-        else:
-            soma_digito1 == 0 and soma_digito2 == 0
-            print('Cpf válido')
-            break
+
+        elif soma_digito1 >= 10:
+            soma_digito1 = 0
+            if soma_digito1 == cpf_lista[9] and soma_digito2 == cpf_lista2[10]:
+                print('Cpf válido')
+                break
+            else:
+                os.system('cls')
+                print('Cpf inválido ou inexistente')
+
+        elif soma_digito2 >= 10:
+            soma_digito2 = 0
+            if soma_digito2 == cpf_lista2[10] and soma_digito1 == cpf_lista[9]:
+                print('Cpf válido')
+                break
+            else:
+                os.system('cls')
+                print('Cpf inválido ou inexistente')
+
     except:
         os.system('cls')
         print('Cpf inválido ou inexistente')
