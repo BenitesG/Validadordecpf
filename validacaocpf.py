@@ -9,16 +9,7 @@ while True:
     contador_regressivo1 = 10
     contador_regressivo2 = 11
 
-    entrada_e_sequencial = cpf_digitado == cpf_digitado[0] * len(cpf_digitado)
-    entrada_e_sequencial2 = cpf_sem_caracter == cpf_sem_caracter[0] * len(
-        cpf_sem_caracter)
-    if entrada_e_sequencial:
-        print('Você enviou dados sequenciais')
-
-    elif entrada_e_sequencial2:
-        print('Você enviou dados sequenciais')
-
-    else:
+    if cpf_digitado:
         for digito1_multi in cpf_sem_caracter:
 
             if digito1_multi.isdigit():
@@ -45,31 +36,43 @@ while True:
 
         try:
 
-            if soma_digito1 <= 9 and soma_digito2 <= 9:
-                if soma_digito1 == cpf_lista[9] and soma_digito2 == cpf_lista2[10]:
-                    print(f'Cpf: {cpf_digitado} é válido')
-                    break
-                else:
-                    os.system('cls')
-                    print('Cpf inválido ou inexistente')
+            entrada_e_sequencial = cpf_digitado == cpf_digitado[1] * len(
+                cpf_digitado)
+            entrada_e_sequencial2 = cpf_sem_caracter == cpf_sem_caracter[1] * len(
+                cpf_sem_caracter)
+            if entrada_e_sequencial:
+                print('Você enviou dados sequenciais')
 
-            elif soma_digito1 >= 10:
-                soma_digito1 = 0
-                if soma_digito1 == cpf_lista[9] and soma_digito2 == cpf_lista2[10]:
-                    print(f'Cpf: {cpf_digitado} é válido')
-                    break
-                else:
-                    os.system('cls')
-                    print('Cpf inválido ou inexistente')
+            elif entrada_e_sequencial2:
+                print('Você enviou dados sequenciais')
 
-            elif soma_digito2 >= 10:
-                soma_digito2 = 0
-                if soma_digito2 == cpf_lista2[10] and soma_digito1 == cpf_lista[9]:
-                    print(f'Cpf: {cpf_digitado} é válido')
-                    break
-                else:
-                    os.system('cls')
-                    print('Cpf inválido ou inexistente')
+            else:
+
+                if soma_digito1 <= 9 and soma_digito2 <= 9:
+                    if soma_digito1 == cpf_lista[9] and soma_digito2 == cpf_lista2[10]:
+                        print(f'Cpf: {cpf_digitado} é válido')
+                        break
+                    else:
+                        os.system('cls')
+                        print('Cpf inválido ou inexistente')
+
+                elif soma_digito1 >= 10:
+                    soma_digito1 = 0
+                    if soma_digito1 == cpf_lista[9] and soma_digito2 == cpf_lista2[10]:
+                        print(f'Cpf: {cpf_digitado} é válido')
+                        break
+                    else:
+                        os.system('cls')
+                        print('Cpf inválido ou inexistente')
+
+                elif soma_digito2 >= 10:
+                    soma_digito2 = 0
+                    if soma_digito2 == cpf_lista2[10] and soma_digito1 == cpf_lista[9]:
+                        print(f'Cpf: {cpf_digitado} é válido')
+                        break
+                    else:
+                        os.system('cls')
+                        print('Cpf inválido ou inexistente')
 
         except:
             os.system('cls')
